@@ -1,0 +1,38 @@
+{
+  "name": "coursesplataform",
+  "version": "1.0.0",
+  "description": "Projeto dedicado a criação de uma plataforma de gerenciamentos de cursos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only --files src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aislangomes/coursesplataform.git"
+  },
+  "keywords": [],
+  "author": "Aislan Gomes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aislangomes/coursesplataform/issues"
+  },
+  "homepage": "https://github.com/aislangomes/coursesplataform#readme",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.6.0",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "prisma": "^5.6.0"
+  }
+}
