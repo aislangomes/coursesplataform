@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles/registercoursestyle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Registar Cursos</title>
+</head>
+<body>
+  <form action="">
+    <legend>Registre seu curso</legend>
+    <label for="coursename">Nome do curso</label>
+    <input type="text" id="coursename" name="coursename">
+    <label for="teachername">Nome do professor</label>
+    <input type="text" id="teachername" name="teachername">
+    <label for="category">Categoria</label>
+    <select name="category" id="category">
+      <option value="backend">Backend</option>
+      <option value="frontend">Frontend</option>
+      <option value="database">Database</option>
+      <option value="softskills">Softskills</option>
+    </select>
+    <label for="description">Descrição</label>
+    <textarea id="description" name="description" rows="10"></textarea>
+    <label for="courseimage">Capa do curso</label>
+    <input type="file" id="courseimage" name="courseimage" accept="image/png, image/gif, image/jpeg">
+    <button>Enviar Curso</button>
+  </form>
+  
+</body>
+</html>

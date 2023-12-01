@@ -6,6 +6,18 @@ export class CourseController {
   async registerCourse(req: Request, res: Response) {
     const { name, teacher, category, description, picture } = req.body;
     try {
+      const coursename = await prisma.course.findUnique({
+        where: { name },
+      });
+      console.log(coursename);
+      if (coursename) {
+        return res.status(403).json({
+          Error: "Course name already exist",
+
+          Course: coursename,
+        });
+      }
+
       const course = await prisma.course.create({
         data: {
           name,
@@ -57,6 +69,10 @@ export class CourseController {
         where: { name },
       });
 
+      if (!course) {
+        return res.status(404).json({ Error: "This course doesn`t existe" });
+      }
+
       return res.json({ course });
     } catch (error) {
       console.error("Error fetching course:", error);
@@ -67,6 +83,10 @@ export class CourseController {
   async getAllCourses(req: Request, res: Response) {
     try {
       const courses = await prisma.course.findMany();
+
+      if (!courses.length) {
+        return res.status(404).json({ Error: "Any course was registred" });
+      }
       return res.json({ courses });
     } catch (error) {
       console.error("Error fetching course:", error);
@@ -81,6 +101,11 @@ export class CourseController {
       const teachercourses = await prisma.course.findMany({
         where: { teacher },
       });
+      if (!teachercourses.length) {
+        return res
+          .status(404)
+          .json({ Error: "This teacher have no courses registereds" });
+      }
 
       return res.json({ teachercourses });
     } catch (error) {
@@ -97,6 +122,10 @@ export class CourseController {
         where: { category },
       });
 
+      if (!categorycourses.length) {
+        return res.status(404).json({ Error: "This category doesn`t exist" });
+      }
+
       return res.json({ categorycourses });
     } catch (error) {
       console.error("Error fetching course:", error);
@@ -107,6 +136,13 @@ export class CourseController {
   async deleteCourse(req: Request, res: Response) {
     const id = Number(req.params.id);
     try {
+      const coursetodelete = await prisma.course.findUnique({
+        where: { id },
+      });
+
+      if (!coursetodelete) {
+        return res.status(404).json({ Error: "This course doesn`t exist" });
+      }
       const deletecourse = await prisma.course.delete({ where: { id } });
       return res.json({ DELETADO: { deletecourse } });
     } catch (error) {

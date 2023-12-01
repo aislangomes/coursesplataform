@@ -1,0 +1,186 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size:62.5%
+}
+
+body{
+  font-size: 1.6rem;
+  background-color:  rgb(49, 49, 49);
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  color: black;
+}
+
+header{
+  width: 100vw;
+  height: 10rem;
+  background: rgb(223, 32, 89);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+nav{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 6rem;
+}
+
+nav > input{
+  margin:.5rem;
+  height: 5rem;
+  width: 18rem;
+  border: none;
+  padding: 1rem;
+  border-radius: .5rem;
+  font-size: 2rem;
+  box-shadow: 5px 5px .5em rgba(0, 0, 0, 0.411);
+}
+
+.menu > button{
+  margin:.5rem;
+  height: 5rem;
+  border: none;
+  border-radius: .5rem;
+  width: 8rem;
+  color: black;
+  font-size: 2rem;
+  box-shadow: 5px 5px .5em rgba(0, 0, 0, 0.411);
+
+}
+
+button:hover{
+  background: rgb(214, 214, 214);
+}
+
+
+main{
+  padding: 6rem 2rem;
+}
+
+ul{  
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.coursetopic{
+  margin-inline: auto;
+  border-radius: 1rem;
+  min-height: 50rem;
+  max-height: fit-content;
+  width: 50rem;
+  padding: 1rem;
+  background-color: white;
+}
+
+img{
+  min-height: 50%;
+  max-height: 25rem;
+  max-width: 100%;
+  display: block;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+h1{
+  font-size: 2.4rem;
+  color: rgb(223, 32, 89);
+}
+
+h2{
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: rgb(88, 88, 88);
+}
+
+span{
+  margin-left: 2rem;
+}
+
+p{
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media (min-width: 1100px){
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 6rem;
+  }
+  
+  nav > input{
+    margin:.5rem;
+    height: 5rem;
+    min-width: 70rem;
+    border: none;
+    padding: 1rem;
+    border-radius: .5rem;
+  }
+  
+  .menu > button{
+    margin:.5rem;
+    height: 5rem;
+    border: none;
+    border-radius: .5rem;
+    width: 10rem;
+    color: black;
+  
+  }
+  .coursetopic{
+    margin: auto;
+    border-radius: 1rem;
+    height: 35rem;
+    width: 50rem;
+    padding: 1rem;
+    background-color: white;
+  }
+
+  p{
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    font-family: "Open Sans", sans-serif;
+  }
+}
+
+@media (min-width: 1600px){
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  .coursetopic{
+    margin: auto;
+    border-radius: 1rem;
+    height: 35rem;
+    width: 40rem;
+    padding: 1rem;
+    background-color: white;
+  }
+
+  p{
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    font-family: "Open Sans", sans-serif;
+  }
+}
